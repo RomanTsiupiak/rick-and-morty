@@ -2,16 +2,19 @@
   "name": "rick-and-morty",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://romantsiupiak.github.io/rick-and-morty/",
   "dependencies": {
     "@apollo/client": "^3.7.7",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/gh-pages": "^3.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "clsx": "^1.2.1",
+    "gh-pages": "^5.0.0",
     "graphql": "^16.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,7 +33,9 @@
     "ts:check": "tsc --noEmit",
     "lint:errors": "eslint \"src/**/*.{ts,tsx}\" --quiet",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "deploy": "gh-pages -d build",
+    "predeploy": "yarn run build"
   },
   "eslintConfig": {
     "extends": [
