@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.7.7",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -11,11 +12,12 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "clsx": "^1.2.1",
+    "graphql": "^16.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
-    "typescript": "^4.4.2",
+    "typescript": "^4.9.5",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -23,6 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "compile": "graphql-codegen",
+    "watch": "graphql-codegen -w",
     "ts:check": "tsc --noEmit",
     "lint:errors": "eslint \"src/**/*.{ts,tsx}\" --quiet",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
@@ -47,6 +51,8 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^3.0.0",
+    "@graphql-codegen/client-preset": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "eslint": "^8.31.0",
