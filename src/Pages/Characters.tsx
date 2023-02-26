@@ -4,7 +4,7 @@ import { CharactersCard } from '../Components/CharactersCard';
 const Characters = () => {
   return (
     <div>
-      <div className="text-center text-2xl text-[#5368ED]">Rick</div>
+      <div className="text-center text-2xl text-[#5368ED]">Rick and Morty</div>
       <CharactersCard
         name="Rick"
         status="Alive"
