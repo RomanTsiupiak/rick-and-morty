@@ -15,7 +15,7 @@ async function render() {
     }
 
     // eslint-disable-next-line
-    const { worker } = require('test/browser');
+    const { worker } = require('test/browser/browser');
 
     await worker.start({
       waitUntilReady: true,
