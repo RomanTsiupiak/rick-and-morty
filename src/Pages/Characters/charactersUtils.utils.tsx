@@ -14,7 +14,7 @@ const charactersUtils = {
     return [
       columnHelper.accessor('image', {
         cell: (info) => (
-          <div className="w-[64px] h-[64px]">
+          <div className="w-[56px] h-[56px]">
             <img src={info.getValue()} alt="avatar" className="w-full h-full rounded-full object-cover" />
           </div>
         ),

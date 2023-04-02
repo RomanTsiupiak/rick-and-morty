@@ -31,7 +31,7 @@ const UiTable = <TData extends object>({ data, columns, className }: UiTableProp
       </thead>
       <tbody>
         {table.getRowModel().rows.map((row) => (
-          <tr key={row.id} className="h-[64px] bg-[#FFFFFF] shadow-md rounded-l-2xl">
+          <tr key={row.id} className="bg-[#FFFFFF] shadow-md rounded-2xl">
             {row.getVisibleCells().map((cell) => (
               <td key={cell.id} className="first:rounded-l-[16px] last:rounded-r-[16px] p-[16px]">
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}

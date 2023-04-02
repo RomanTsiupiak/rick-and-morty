@@ -1,12 +1,8 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 
-const apolloClient = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql',
-  cache: new InMemoryCache(),
-  connectToDevTools: true,
-});
+import { apolloClient } from 'api/apolloClient';
 
 const AppProviders = ({ children }: React.ComponentProps<'div'>) => {
   return (
