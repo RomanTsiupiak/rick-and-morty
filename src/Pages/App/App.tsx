@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Sidebar from 'Components/Sidebar/Sidebar';
 import { PageLayout } from 'Components/PageLayout';
-import Characters from 'Pages/Characters';
+import Characters from 'Pages/Characters/Characters';
 
 import './styles.css';
 

@@ -17,7 +17,6 @@
 # vscode
 .vscode
 
-# env
 .env
 
 # misc

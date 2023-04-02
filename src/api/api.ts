@@ -6,6 +6,9 @@ export const GetSomeCharacters = gql`
       results {
         id
         name
+        image
+        gender
+        status
       }
     }
   }
