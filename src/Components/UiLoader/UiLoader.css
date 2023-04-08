@@ -1,11 +1,11 @@
 .ui_loader {
     color: blue;
-    animation: rotate 3s linear infinite;
+    animation: rotate 2s linear infinite;
 }
 
 .ui_loader__circle {
     stroke-linecap: round;
-    animation: dash ease-in-out 2s infinite;
+    animation: dash ease-in-out 1.5s infinite;
 }
 
 @keyframes rotate {

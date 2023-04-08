@@ -1,13 +1,14 @@
 import { createColumnHelper } from '@tanstack/react-table';
 
-export type Person = {
+export type Character = {
+  id: string;
   image: string;
   name: string;
   status: string;
   gender: string;
 };
 
-const columnHelper = createColumnHelper<Person>();
+const columnHelper = createColumnHelper<Character>();
 
 const charactersUtils = {
   getColumns: () => {

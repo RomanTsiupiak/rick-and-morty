@@ -1,19 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import UiTable from 'Components/UiTable/UiTable';
-import { GetSomeCharacters } from 'api/api';
+import UiTablePaginated from 'Components/UiTable/UiTablePaginated';
+import { GetCharactersList } from 'api/Characters/GetCharactersList';
 
 import charactersUtils from './charactersUtils.utils';
-import { Person } from './charactersUtils.utils';
-import { useQuery } from '@apollo/client';
+import { Character } from './charactersUtils.utils';
 
 const Characters = () => {
-  const { data } = useQuery(GetSomeCharacters);
+  const navigate = useNavigate();
+
+  const handleRowClick = (option: Character) => {
+    navigate(`/characters/${option.id}`);
+  };
 
   return (
-    <div>
-      <UiTable<Person> data={data?.characters?.results ?? []} columns={charactersUtils.getColumns()} />
-    </div>
+    <UiTablePaginated<Character>
+      fetchAction={GetCharactersList}
+      columns={charactersUtils.getColumns()}
+      onRowClick={handleRowClick}
+    />
   );
 };
 
