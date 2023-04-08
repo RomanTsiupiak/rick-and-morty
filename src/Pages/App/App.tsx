@@ -21,6 +21,7 @@ const App = () => {
             </PageLayout>
           }
         />
+        <Route path="/characters/:id" element={<PageLayout title="Profile" />} />
         <Route path="/locations" element={<PageLayout title="Locations" />} />
         <Route path="/episodes" element={<PageLayout title="Episodes" />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />

@@ -1,20 +1,31 @@
 import React from 'react';
 import clsx from 'clsx';
-import { useReactTable, getCoreRowModel, flexRender, ColumnDef } from '@tanstack/react-table';
+import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table';
 
-type UiTableProps<TData> = {
-  data: TData[];
-  // The reason of using any is here https://github.com/TanStack/table/issues/4241
-  columns: ColumnDef<TData, any>[];
-  className?: string;
-};
+import UiLoader from '../UiLoader/UiLoader';
 
-const UiTable = <TData extends object>({ data, columns, className }: UiTableProps<TData>) => {
+import { UiTableProps } from './UiTable.types';
+
+const UiTable = <TData extends object>({
+  data,
+  columns,
+  className,
+  isDataLoading,
+  onRowClick = () => {},
+}: UiTableProps<TData>) => {
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
+
+  if (isDataLoading) {
+    return (
+      <div className="fixed top-[50%] left-[50%] translate-[50%] ">
+        <UiLoader />
+      </div>
+    );
+  }
 
   return (
     <table className={clsx('w-full border-separate border-spacing-y-[16px]', className)}>
@@ -31,7 +42,11 @@ const UiTable = <TData extends object>({ data, columns, className }: UiTableProp
       </thead>
       <tbody>
         {table.getRowModel().rows.map((row) => (
-          <tr key={row.id} className="bg-[#FFFFFF] shadow-md rounded-2xl">
+          <tr
+            onClick={() => onRowClick(row.original)}
+            key={row.id}
+            className="bg-[#FFFFFF] shadow-md rounded-2xl cursor-pointer"
+          >
             {row.getVisibleCells().map((cell) => (
               <td key={cell.id} className="first:rounded-l-[16px] last:rounded-r-[16px] p-[16px]">
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
