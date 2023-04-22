@@ -21,10 +21,14 @@ const UiTable = <TData extends object>({
 
   if (isDataLoading) {
     return (
-      <div className="fixed top-[50%] left-[50%] translate-[50%] ">
+      <div className="w-full h-full flex justify-center items-center overflow-hidden text-2xl">
         <UiLoader />
       </div>
     );
+  }
+
+  if (!isDataLoading && data.length === 0) {
+    return <div className="w-full h-full flex justify-center items-center overflow-hidden text-2xl">No Results</div>;
   }
 
   return (
