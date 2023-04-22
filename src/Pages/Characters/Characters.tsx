@@ -16,6 +16,7 @@ const Characters = () => {
 
   return (
     <UiTablePaginated<Character>
+      type="characters"
       fetchAction={GetCharactersList}
       columns={charactersUtils.getColumns()}
       onRowClick={handleRowClick}
